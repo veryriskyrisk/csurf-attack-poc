@@ -4,8 +4,11 @@ Demonstration of an attack against express that's using csurf library with cooki
 
 To run it:
 
-- go into csurf-signed-attacker and run `npm i`, then `npm start`
-- go into csurf-signed-victim and run `npm i`, then `npm start`
+- checkout the repo
+- go into csurf-signed-attacker and run `npm i`
+- go into csurf-signed-victim and run `npm i`
+- modify `csurf-signed-attacker/node_modules/cookie-signature/index.js` line 42 so it always returns `str` and does not check signature
+- run `npm start` for both apps
 - attacker website will run on `:3001`, victim one on `:3000`
 - to demonstrate it nicely setup hosts on your local to simulate domain and subdomain, for example add/modify line like this: `127.0.0.1 localhost csrftest.com 1.csrftest.com`
 
