@@ -1,0 +1,8 @@
+<h1>{{title}}</h1>
+<p>This for will target the app used by the victim</p>
+
+
+<form action="//csrftest.com:3000/csrfprotected" method="post">
+  <input type="hidden" name="_csrf" value="{{csrfToken}}">
+  <button type="submit">Submit me</button>
+</form>
