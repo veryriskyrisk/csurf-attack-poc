@@ -24,6 +24,6 @@ There are two phases of the attack:
 # Actual attack
 
 - victim visits attacker website on a subdomain - for example `1.csrftest.com:3001` in our case, I'm using different ports to make it easier to run on localhost with vanila setup
-- attacker website toses signed cookie value obtained previously into a cookie with domain set to `.csrftest.com` and with specific path - in our case `/csrfprotected` - that's happening by visiting `http://1.csrftest.com:3000/toss?tossme=XYZ` where `XYZ` is value previously captured by the attacker
+- attacker website toses signed cookie value obtained previously into a cookie with domain set to `.csrftest.com` and with specific path - in our case `/csrfprotected` - that's happening by visiting `http://1.csrftest.com:3001/toss?tossme=XYZ` where `XYZ` is value previously captured by the attacker
 - attacker website tricks user into submitting (or submits via JS) form available on `1.csrftest.com:3001`
 - CSRF token present on the attacker website gets accepted on victims website
